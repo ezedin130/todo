@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:todo/bottom_modal.dart';
 import 'package:todo/reusable_container.dart';
 
 class Homescreen extends StatelessWidget {
@@ -193,9 +194,42 @@ class Homescreen extends StatelessWidget {
             child: Align(
               alignment: Alignment.bottomRight,
               child: FloatingActionButton(
-                onPressed: () {},
+                onPressed: () {
+                  showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return bottom_sheet();
+                      });
+                },
                 child: Icon(
                   Icons.add,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 60.0, right: 20),
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                width: 150,
+                height: 100,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.amber[100],
+                    border: Border.all(
+                      color: Colors.black,
+                      width: 3.0,
+                    )),
+                child: Center(
+                  child: Text(
+                    'Number',
+                    style: GoogleFonts.poppins(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
               ),
             ),
