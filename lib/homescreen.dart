@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:todo/reusable_container.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -88,7 +89,7 @@ class Homescreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        height: 60,
+                        height: 50,
                         width: 150,
                         decoration: BoxDecoration(
                           color: Colors.teal,
@@ -117,7 +118,7 @@ class Homescreen extends StatelessWidget {
                         width: 5,
                       ),
                       Container(
-                        height: 60,
+                        height: 50,
                         width: 150,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -144,15 +145,58 @@ class Homescreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 20.0),
-                    child: FloatingActionButton(
-                      onPressed: () {},
-                      child: Icon(Icons.add),
+                  SizedBox(height: 20.0),
+                  Expanded(
+                    child: ListView(
+                      children: [
+                        ReusableContainer(
+                          text: 'Pray The Morning Prayer',
+                          time: '11:00',
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        ReusableContainer(
+                          text: 'Take A Shower',
+                          time: '1:00',
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        ReusableContainer(
+                          text: 'Eat Breakfast',
+                          time: '2:00',
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        ReusableContainer(
+                          text: 'Learn Flutter',
+                          time: '3:00',
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        ReusableContainer(
+                          text: 'Go To The Gym',
+                          time: '4:00',
+                        ),
+                      ],
                     ),
-                  )
+                  ),
                 ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20.0, right: 20),
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: FloatingActionButton(
+                onPressed: () {},
+                child: Icon(
+                  Icons.add,
+                ),
               ),
             ),
           )
